@@ -1,0 +1,167 @@
+.header {
+    padding-block: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    transition: padding var(--transition);
+  }
+  
+  .header.active {
+    background: var(--cultured);
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.1);
+    padding-block: 20px;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .logo { width: 120px; }
+  
+  .logo img { width: 50%; }
+  
+  .menu-open-btn {
+    font-size: 35px;
+    color: var(--mango-tango);
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    background: var(--mantis);
+    padding: 80px 20px;
+    transition: 0.15s ease-in;
+    z-index: 3;
+  }
+  
+  .navbar.active {
+    left: 0;
+    transition: 0.25s ease-out;
+  }
+  
+  .menu-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    padding: 5px;
+    background: var(--rich-black-fogra-29);
+    color: var(--white);
+  }
+  
+  .navbar .logo {
+    width: 160px;
+    margin-bottom: 30px;
+    margin-inline: auto;
+  }
+  
+  .navbar-list { margin-bottom: 15px; }
+  
+  .navbar-link {
+    color: var(--rich-black-fogra-29);
+    font-weight: var(--fw-500);
+    padding-block: 15px;
+    font-family: var(--dm-sans);
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: hsla(0, 0%, 0%, 0.7);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.15s ease-out;
+    z-index: 3;
+  }
+  
+  .overlay.active {
+    pointer-events: all;
+    opacity: 1;
+  }
+  
+
+  /* .container {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+  }
+  
+   */
+
+form {
+    margin-top: 300px;
+    margin-left: 300px;
+    margin-right: 300px;
+
+    justify-content: space-between;
+    max-width: 500px;
+    /* margin: auto; */
+    padding: 8px;
+    /* border: 10px solid #ccc; */
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+label {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex;
+    text-align: right;
+    width: 400px;
+    line-height: 26px;
+    margin-bottom: 10px;
+
+  
+}
+
+input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 50px;
+
+  }
+
+  input,label{
+    float: left;
+  }
+
+
+
+button{
+    
+    text-align: right;
+    /* margin-left: auto */
+   
+}
+#showContentBtn{
+  text-align: right;
+  margin-left: auto;
+}
+
+
+.bg-img {
+    /* The image used */
+    background-image: url("/public/images/ngoback.jpeg");
+  
+    /* Control the height of the image */
+    min-height: 380px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .hidden-content {
+    display: none;
+    text-align: left;
+    margin-right: 10px;
+  }

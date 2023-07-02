@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="/css/ffstyle.css" />
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <a href="#" class="logo">
+          <img src="/images/logo2w-removebg-preview.png" alt="NGO logo" />
+        </a>
+
+        <button class="menu-open-btn" data-menu-open-btn>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <a href="#" class="logo">
+            <img src="/images/logo2w-removebg-preview.png" alt="NGO logo" />
+          </a>
+
+          <ul class="navbar-list">
+            <li>
+              <a href="/index" class="navbar-link">Home</a>
+            </li>
+
+            <li>
+              <a href="/ngo_guide" class="navbar-link">NGOs Around You </a>
+            </li>
+
+            <li>
+              <a href="/funds" class="navbar-link">Funds</a>
+            </li>
+          </ul>
+
+          <a href="/tempform"
+            ><button class="btn btn-secondary">Donate Now</button></a
+          >
+        </nav>
+      </div>
+    </header>
+
+
+
+    <div class="main">
+      <div class="container">
+
+
+
+
+         <form action="/tempform" method="post">
+
+
+      <h2>Donation Form</h2>
+          <div class="form-group-1">
+            <input type="name" name="name" placeholder="Your Name" required />
+
+            <!-- <label for="email">Email <input type="email" name="email" /></label> -->
+
+            <input type="email" name="email" placeholder="Email" required />
+
+            <!-- <label for="phone">Phone <input type="number" name="phone"/></label> -->
+            <input
+              type="number"
+              name="phone"
+             
+              placeholder="Phone number"
+              required
+            />
+
+            <!-- <label for="address">Address <input type="address" name="address"/></label> -->
+
+            <input
+              type="address"
+              name="address"
+             
+              placeholder="Address"
+              required
+            />
+
+           
+          </div>
+         
+
+          <div class="form-group-2">
+            <h3>NGO Details:refer Funds and Ngo section for more details</h3>
+            <div class="select-list">
+             <select name="ngotype" id="ngo" >
+                <option value="women">Ngo Category</option>
+            <option value="women">Women Welfare</option>
+             <option value="childeren">Children Welfare</option>
+             <option value="oldage">Oldage Homes</option>
+             <option value="education">Education</option>
+   
+             
+           </select> 
+              
+            </div>
+
+           
+
+            <!-- <label for="ngoname">NGO Name<input type="name" name="ngoname" /></label> -->
+            <input type="ngoname" name="ngoname" placeholder="Enter Ngo Name where you want to donate" required />
+
+            
+
+
+            <div class="select-list">
+              <select name="donation" id="ngo">
+                <option seleected value="op1">Type of donation</option>
+                <option value="Item">Item</option>
+
+                <option value="Fund">Fund</option>
+              </select>
+            </div>
+          </div>
+
+          
+
+        <div class="form-group-3">
+            <h3>PickUp Details </h3>
+            <div class="select-list">
+             <select name="pickup" id="ngo" >
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+           </select> 
+              
+            </div>
+
+
+           
+
+            <input type="text" name="date" placeholder="Preffered PickUp Date"  />
+            
+            <input type="text" name="time" placeholder="Preffered PickUp Time"  />
+
+            <input type="text" name="pickaddress" placeholder="PickUp Address"  />
+
+            <input type="number" name="contact" placeholder="contact"  />
+            
+
+           
+            <h3>Donation Details </h3>
+
+            <label for="file">Upload File <input type="file" id="file" name="file"/></label>
+
+        </div>
+
+        
+            
+
+
+         
+         
+          <div class="form-submit">
+            <input
+              type="submit"
+              name="submit"
+              id="submit"
+              class="submit"
+              value="Submit"
+            />
+          </div>
+        </form>
+        <button id="showContentBtn" class="btn btn-secondary">Show Previous donations</button>
+<div id="content" class="hidden-content">
+   <table>
+    <tr>
+      <th>name</th>
+      
+      <th>ngo name</th>
+
+    </tr>
+    <% allDonations.forEach((donation) => { %>
+    <tr>
+      <td><%= donation.name %></td>
+      <td><%= donation.ngoname %></td>
+    </tr>
+    <%})%>
+  </table>
+</div>
+      </div>
+    </div>
+
+
+    <!-- <form action="/tempform" method="post">
+      <div>
+        <label for="name">Name <input type="name" name="name" /></label>
+
+        <label for="email">Email <input type="email" name="email" /></label>
+        
+        
+
+        <label for="phone">Phone <input type="number" name="phone" /></label>
+        <label for="address">Address <input type="address" name="address" /></label>
+        <label>NGO Details:refer Funds and Ngo section for more details </label>
+
+        
+        <label >Enter Ngo type
+
+         <select name="ngotype" id="ngo">
+          <option value="women">Women Welfare</option>
+          <option value="childeren">Children Welfare</option>
+          <option value="oldage">Oldage Homes</option>
+          <option value="education">Education</option>
+
+          
+        </select> 
+      </label>
+        
+        <label for="ngoname">NGO Name<input type="name" name="ngoname" /></label>
+
+       
+
+        <label >Enter the type of donation 
+        <select name="donation" id="ngo">
+          <option value="Item">Item</option>
+          <option value="Fund">Fund</option>
+        </select> 
+      </label>
+
+       
+        <label>Pick up details</label>
+    
+        <label >Do you want Pickup
+          <select name="pickup" id="ngo">
+
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select> 
+        </label>
+       
+
+        <label for="date">Enter Pickup date <input type="text" name="date"/></label>
+        <label for="time">Preffered Pick up time <input type="text" name="time"/></label>
+        <label for="pickaddress">Enter Pickup address <input type="address" name="pickaddress"/></label>
+        <label for="contact">Enter contact number<input type="tel" name="contact"/></label>
+
+        <label for="file">Upload File <input type="file" id="file" name="file"/></label>
+
+      
+
+      <button class="btn btn-secondary" type="submit">Submit</button>
+      
+    </form> -->
+
+   
+<!-- </div>
+<button id="showContentBtn" class="btn btn-secondary">Show Previous donations</button>
+<div id="content" class="hidden-content">
+   <table>
+    <tr>
+      <th>name</th>
+      
+      <th>ngo name</th>
+
+    </tr>
+    <% allDonations.forEach((donation) => { %>
+    <tr>
+      <td><%= donation.name %></td>
+      <td><%= donation.ngoname %></td>
+    </tr>
+    <%})%>
+  </table>
+</div> -->
+
+
+
+
+
+
+
+    <script src="/js/script.js"></script>
+    <script src="/js/fmain.js"></script>
+  </body>
+</html>
